@@ -32,4 +32,5 @@ export default defineType({
       of: [{type: 'string'}],
     },
   ],
+  
 })
