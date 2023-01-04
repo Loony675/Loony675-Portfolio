@@ -16,21 +16,13 @@ export default defineType({
     },
     {name: 'summary', title: 'Summary', type: 'text'},
 
-    {name: 'dateStarted', title: 'DateStarted', type: 'date'},
-    {name: 'dateEnded', title: 'DateEnded', type: 'date'},
-    {name: 'isCurrentlyWorkingHere', title: 'IsCurrentlyWorkingHere', type: 'boolean'},
     {
       name: 'technologies',
-      title: 'Stechnologiess',
+      title: 'Technologies',
       type: 'array',
       of: [{type: 'reference', to: {type: 'skill'}}],
     },
-    {
-      name: 'points',
-      title: 'Points',
-      type: 'array',
-      of: [{type: 'string'}],
-    },
+
     {name: 'linkToBuild', title: 'LinkToBuild', type: 'url'},
 
   ],

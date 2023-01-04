@@ -21,7 +21,7 @@ export default defineType({
     {name: 'isCurrentlyWorkingHere', title: 'IsCurrentlyWorkingHere', type: 'boolean'},
     {
       name: 'technologies',
-      title: 'Stechnologiess',
+      title: 'Technologies',
       type: 'array',
       of: [{type: 'reference', to: {type: 'skill'}}],
     },
@@ -32,5 +32,5 @@ export default defineType({
       of: [{type: 'string'}],
     },
   ],
-  
+
 })
