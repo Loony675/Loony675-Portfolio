@@ -7,6 +7,8 @@ yarn install
 _Tailwindcss est la base du css de ce site. Il permet de faire du in-line style
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+// Scrollbar tailwind
+yarn add -D tailwind-scrollbar
 
 // INSTALLATION DES ICONS
 yarn add react-social-icons
@@ -17,3 +19,6 @@ yarn add framer-motion
 
 // ANIMATION TYPEWRITER
 yarn add react-simple-typewriter 
+
+// FORMULAIRE DE CONTACT
+yarn add react-hook-form
