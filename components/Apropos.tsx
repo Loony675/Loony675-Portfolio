@@ -1,9 +1,13 @@
 import { MotionConfig, motion } from "framer-motion";
 import React from "react";
+import { urlFor } from "../sanity";
+import { PageInfo } from "../typings";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo
+};
 
-function Apropos({}: Props) {
+function Apropos({pageInfo}: Props) {
   return (
     <motion.div
       initial={{opacity:0}}
@@ -20,7 +24,7 @@ function Apropos({}: Props) {
         whileHover={{scale:1.1}}
         transition={{ duration: 1.5 }}
         viewport={{ once: true }}
-        src="https://res.cloudinary.com/dpe2tab7h/image/upload/v1672153139/P1220532-4_fdsyt1.jpg"
+        src={urlFor(pageInfo?.profilePic).url()}
         alt="photo à propos"
         className="mt-20 -mb-10 md:mb-10 flex-shrink-0 w-60 rounded-full object-cover md:rounded-lg md:w-[200px] xl:w-[500px] "
       />
@@ -29,16 +33,7 @@ function Apropos({}: Props) {
           Un peu de contexte
         </motion.h4>
         <p className="text-sm -mb-10 ">
-          Je m'appelle Théo. Mes premieres lignes de code ont été écrites en
-          2012 durant mon BTS SIO SISR. Ma vie professionnelle s'est tournée
-          vers autre chose et je n'étais pas épanui au travail. J'ai alors
-          entrepris un projet de reconversion et ai obtenu un titre de Chef de
-          Projet de développement d'application Web et Mobile en Novembre 2022.
-        </p>
-        <p>
-          {" "}
-          Aujourd'hui j'adore ce que je fais et m'éclate dans un domaine qui n'a
-          de limite que l'imagination{" "}
+          {pageInfo.backgroundInformation}
         </p>
       </div>
     </motion.div>

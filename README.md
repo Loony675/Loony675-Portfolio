@@ -22,3 +22,17 @@ yarn add react-simple-typewriter
 
 // FORMULAIRE DE CONTACT
 yarn add react-hook-form
+
+// SANITY
+npm install @sanity/cli
+sanity init
+
+yarn add next-sanity @portabletext/react @sanity/image-url
+
+
+
+// DEPLOIEMENT VERCEL
+sudo npm i -g vercel
+vercel build
+vercel deploy --prebuilt
+vercel --prod

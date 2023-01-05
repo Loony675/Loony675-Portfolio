@@ -3,10 +3,14 @@ import BackgroundCircles from "./BackgroundCircles";
 
 import { Cursor, Typewriter, useTypewriter } from "react-simple-typewriter";
 import Link from "next/link";
+import { PageInfo } from "../typings";
+import { urlFor } from "../sanity";
 
-type Props = {};
+type Props = {
+  pageInfo: PageInfo
+};
 
-export default function ({}: Props) {
+export default function ({pageInfo}: Props) {
   const [text, count] = useTypewriter({
     words: [
       "#HelloWorld",
@@ -15,6 +19,7 @@ export default function ({}: Props) {
       "Vous êtes un recruteur ?",
       "Installez-vous confortablement",
       "Plutôt café ou thé ?",
+      `${pageInfo?.name} Portfolio`
     ],
     loop: true,
     delaySpeed: 2000,
@@ -26,12 +31,12 @@ export default function ({}: Props) {
       <BackgroundCircles />
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src="https://res.cloudinary.com/dpe2tab7h/image/upload/v1672145136/LA-CAPSULE_07-09-2022-387HD-min_bcatjg.jpg"
+        src={urlFor(pageInfo.heroImage).url()}
         alt="photo de profil"
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[10px]">
-          Développeur Full Stack
+          {pageInfo.role}
         </h2>
         <h1 className="text-3xl lg:text-6xl font-semibold px-10">
           <span className="mr-3">{text}</span>

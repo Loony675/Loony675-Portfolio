@@ -3,37 +3,52 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Apropos from "../components/Apropos";
-import Experience from "../components/Experience";
+import WorkExperience from "../components/WorkExperience";
 import Skills from "../components/Skills";
 import Projets from "../components/Projets";
 import ContactMe from "../components/ContactMe";
 import { HomeOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
+import { GetStaticProps } from "next";
+import { Experience, PageInfo, Skill, Projet, Social } from "../typings";
+import { fetchPageInfo } from "../utils/fetchPageInfo";
+import { fetchExperience } from "../utils/fetchExperience";
+import { fetchProjet } from "../utils/fetchProjets";
+import { fetchSkills } from "../utils/fetchSkills";
+import { fetchSocial } from "../utils/fetchSocials";
 
-export default function Home() {
+type Props = {
+  pageInfo: PageInfo;
+  experience: Experience[];
+  skills: Skill[];
+  projets: Projet[];
+  socials: Social[];
+};
+
+export default function Home({pageInfo, experience, skills, projets, socials}: Props) {
   return (
     <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]">
       <Head>
         <title>Portfolio de Théo Loussot</title>
       </Head>
-      <Header />
+      <Header socials = {socials} />
       <section id="hero" className="snap-start">
-        <Hero />
+        <Hero pageInfo = {pageInfo}/>
       </section>
       <section id="about" className="snap-center">
-        <Apropos />
+        <Apropos pageInfo = {pageInfo}/>
       </section>
       <section id="experience" className="snap-center">
-        <Experience />
+        <WorkExperience experience = {experience}/>
       </section>
       <section id="skills" className="snap-start">
-        <Skills />
+        <Skills skills ={skills} />
       </section>
       <section id="projets" className="snap-start">
-        <Projets />
+        <Projets projets = {projets}/>
       </section>
       <section id="contactMe" className="snap-start">
-        <ContactMe />
+        <ContactMe pageInfo = {pageInfo} />
       </section>
 
       <footer className="sticky bottom-5 w-full cursor-pointer">
@@ -51,3 +66,21 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const pageInfo: PageInfo = await fetchPageInfo();
+  const experience: Experience[] = await fetchExperience();
+  const skills: Skill[] = await fetchSkills();
+  const projets: Projet[] = await fetchProjet();
+  const socials: Social[] = await fetchSocial();
+  return {
+    props: {
+      pageInfo,
+      experience,
+      skills,
+      projets,
+      socials,
+    },
+    revalidate:10,
+  };
+};
