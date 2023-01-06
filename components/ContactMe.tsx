@@ -9,9 +9,9 @@ type Inputs= {
   message: String
 }
 
-type Props = {};
+type Props = {  pageInfo: PageInfo};
 
-export default function ContactMe({}: Props) {
+export default function ContactMe({pageInfo}: Props) {
   const {register, handleSubmit} = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = formData => {
     window.location.href = `mailto:theo.loussot@gmail.com?subject=${formData.subject}&body=Bonjour, je m'appelle ${formData.name}. ${formData.message} (${formData.email})`
