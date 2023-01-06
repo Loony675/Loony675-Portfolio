@@ -1,6 +1,6 @@
 // INSTALLATION du projet REACT
 _Cette commande permet d'installer un build pré-fait de REACT afin d'initialiser un projet
-npx create-react-app my-project
+npx create-next-app@latest
 yarn install
 
 // INSTALLATION DE TAILWINDCSS 
