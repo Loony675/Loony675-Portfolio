@@ -26,7 +26,7 @@ function Apropos({pageInfo}: Props) {
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
         alt="photo à propos"
-        className="mt-20 -mb-10 md:mb-10 flex-shrink-0 w-60 rounded-full object-cover md:rounded-lg md:w-[200px] xl:w-[500px] "
+        className="mt-20 -mb-10 md:mb-10 flex-shrink-0 w-60 rounded-full object-cover md:rounded-lg md:w-[200px] "
       />
       <div className="space-y-5 px-0 md:px-10">
         <motion.h4 whileHover={{scale:1.1}} className="text-center justify-center items-center text-4xl font-semibold mb-2">
