@@ -29,8 +29,6 @@ sanity init
 
 yarn add next-sanity @portabletext/react @sanity/image-url
 
-
-
 // DEPLOIEMENT VERCEL
 sudo npm i -g vercel
 vercel build
