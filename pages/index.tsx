@@ -64,7 +64,7 @@ export default function Home({pageInfo, experience, skills, projets, socials}: P
           </motion.div>
         </Link>
       </footer>
-      <Analytics/>
+      <Analytics />
     </div>
   );
 }
