@@ -16,7 +16,6 @@ import { fetchExperience } from "../utils/fetchExperience";
 import { fetchProjet } from "../utils/fetchProjets";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchSocial } from "../utils/fetchSocials";
-import { Analytics } from '@vercel/analytics/react';
 
 type Props = {
   pageInfo: PageInfo;
@@ -64,7 +63,6 @@ export default function Home({pageInfo, experience, skills, projets, socials}: P
           </motion.div>
         </Link>
       </footer>
-      <Analytics />
     </div>
   );
 }
