@@ -25,7 +25,7 @@ function Projets({ projets }: Props) {
             key={i}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
           >
-            <motion.img
+            <a href={projet.linkToBuild}>            <motion.img
               initial={{ y: -300, opacity: 0 }}
               transition={{ duration: 1.5 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,8 @@ function Projets({ projets }: Props) {
               src={urlFor(projet?.image).url()}
               alt="netflix devices"
               className="max-h-40"
-            />
+            /></a>
+
             <div className="space-y-5 px-0 md-px-10 max-w-6xl">
               <h4 className="text-2xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]">
