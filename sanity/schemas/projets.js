@@ -5,7 +5,7 @@ export default defineType({
   title: 'Projets',
   type: 'document',
   fields: [
-    {name: 'title', title: 'Title', description:'Titre du projet', type: 'string'},
+    {name: 'title', title: 'Title', description: 'Titre du projet', type: 'string'},
     {
       name: 'image',
       title: 'Image',
@@ -24,6 +24,5 @@ export default defineType({
     },
 
     {name: 'linkToBuild', title: 'LinkToBuild', type: 'url'},
-
   ],
 })
