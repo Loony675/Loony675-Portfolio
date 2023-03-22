@@ -43,7 +43,7 @@ function Projets({ projets }: Props) {
                 {projet.title}
               </h4>
               <div className="flex items-center justify-center space-x-2">
-                {projet?.technologies.map((tech) => (
+                {projet.technologies.map((tech) => (
                   <img
                     key={tech._id}
                     src={urlFor(tech.image).url()}
