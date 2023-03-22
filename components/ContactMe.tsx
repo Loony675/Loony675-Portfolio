@@ -23,13 +23,7 @@ export default function ContactMe({pageInfo}: Props) {
         Contact
       </h3>
       <div className=" flex flex-col space-y-10 ">
-        {/* <h4 className="text-2xl font-semibold text-center">
-          J'ai ce qu'il vous faut.
-          <br />
-          <span className="decoration-[#F7AB0A]/50 underline">
-            Contactez-moi.
-          </span>
-        </h4> */}
+
         <div className="space-y-10 ml-5 px-0">
           <div className="flex items-center space-x-5 ">
             <PhoneIcon className="text-[#F7AB0A] h-7 w-7 animate-pulse" />
